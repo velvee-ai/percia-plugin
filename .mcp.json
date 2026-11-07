@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "percia": {
+      "type": "http",
+      "url": "https://playground.percia.ai/mcp/directory"
+    }
+  }
+}

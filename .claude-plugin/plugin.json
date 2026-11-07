@@ -1,0 +1,22 @@
+{
+  "name": "percia",
+  "displayName": "Percia",
+  "version": "1.0.0",
+  "description": "Watch cameras and video with AI vision from a conversation: describe what to look for, add a phone as a camera, and get alerts in Slack, email or a webhook. Includes the Percia connector and task skills.",
+  "author": {
+    "name": "Velvee, Inc.",
+    "url": "https://www.percia.ai"
+  },
+  "homepage": "https://playground.percia.ai/coding-agents",
+  "repository": "https://github.com/velvee-ai/percia-plugin",
+  "license": "MIT",
+  "keywords": [
+    "camera",
+    "video",
+    "monitoring",
+    "alerts",
+    "slack",
+    "vision"
+  ],
+  "privacyPolicyUrl": "https://privacy.percia.ai/privacy/"
+}
