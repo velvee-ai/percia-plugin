@@ -1,6 +1,6 @@
 ---
 name: percia
-description: Integrate Percia, a service that watches a camera or video URL for a plain-language goal and calls a signed webhook when it becomes true. Use when creating Percia watches, writing a webhook receiver, verifying Percia-Signature, wording a watch goal, handling Percia API keys and errors, or using Percia agents, sites and shared memory, evidence, phone cameras and actions.
+description: "Integrate Percia, a service that watches a camera or video URL for a plain-language goal and calls a signed webhook when it becomes true. Use when creating Percia watches, writing a webhook receiver, verifying Percia-Signature, wording a watch goal, handling Percia API keys and errors, or using Percia agents, sites and shared memory, evidence, phone cameras and actions."
 ---
 
 # Percia
@@ -62,7 +62,7 @@ export function verify(rawBody, header, secret, now = Date.now() / 1000) {
 
 ```bash
 curl -sS -X POST "$BASE/api/watches/owned" \
-  -H "Authorization: Bearer $PERCIA_API_KEY" -H 'content-type: application/json' \
+  -H "Authorization: Bearer YOUR_API_KEY" -H 'content-type: application/json' \
   -d '{"sourceUrl":"rtsp://cam.example.com/stream","goal":"A person is standing at the front door","notify":{"type":"webhook","target":"https://example.com/hooks/percia"}}'
 ```
 
@@ -71,7 +71,7 @@ The target must be a public `https` address (private, loopback and link-local ar
 **Test the receiver before trusting it:**
 
 ```bash
-curl -sS -X POST "$BASE/api/watches/$WATCH_ID/test-delivery" -H "Authorization: Bearer $PERCIA_API_KEY"
+curl -sS -X POST "$BASE/api/watches/$WATCH_ID/test-delivery" -H "Authorization: Bearer YOUR_API_KEY"
 ```
 
 This sends a signed `goal.test` event to the target and returns the response status and duration. Fix the receiver until it answers 2xx and passes verification, then rely on real events. Read outcomes with `GET /api/watches/:id/events` (`deliveryStatus`: `pending`, `delivered`, `failed`).

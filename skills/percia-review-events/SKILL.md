@@ -1,6 +1,6 @@
 ---
 name: percia-review-events
-description: Review what Percia saw. Use when the user asks what happened on a watch or site, wants to look at event images, mark alerts as correct or false alarms, or check metrics.
+description: "Review what Percia saw. Use when the user asks what happened on a watch or site, wants to look at event images, mark alerts as correct or false alarms, or check metrics."
 ---
 
 # Review events

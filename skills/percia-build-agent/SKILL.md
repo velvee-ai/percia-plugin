@@ -1,6 +1,6 @@
 ---
 name: percia-build-agent
-description: Build and deploy a Percia agent, a versioned config of several things to watch for. Use when one goal is not enough: several concerns, zones, thresholds, tests before publishing, then deploying it to watches.
+description: "Build and deploy a Percia agent, a versioned config of several things to watch for. Use when one goal is not enough: several concerns, zones, thresholds, tests before publishing, then deploying it to watches."
 ---
 
 # Build an agent

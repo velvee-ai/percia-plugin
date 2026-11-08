@@ -1,6 +1,6 @@
 ---
 name: percia-connect-tool
-description: Send Percia alerts to Slack, Discord, Telegram, Home Assistant or a custom webhook. Use when the user wants a watch to post to a channel or chat, or to trigger something when its goal is met: checks what is connected, hands the person a connect link, then adds the rule to the watch.
+description: "Send Percia alerts to Slack, Discord, Telegram, Home Assistant or a custom webhook. Use when the user wants a watch to post to a channel or chat, or to trigger something when its goal is met: checks what is connected, hands the person a connect link, then adds the rule to the watch."
 ---
 
 # Connect a tool
@@ -9,6 +9,7 @@ A watch can deliver to the services its owner has connected. **Only a person can
 
 Scopes: `integrations:read` to list, `integrations:write` to make a link, `watches:read` and `watches:write` for a watch's rules. If a call returns 403 `insufficient_scope`, tell the user which scope is missing; do not look for a workaround. Integrations may be switched off: check `integrationsEnabled` in `GET /api/config` (the routes answer 404 when off). Full route list: `search` with MCP, `/api/openapi.json` otherwise.
 
+0. **Defaults are automatic.** A connection with `default: true` in `GET /api/integrations` (or `whoami`) is attached by Percia to every new watch you create: do not ask about it and do not attach it again. Attach other connections only when the user asks. Making one a default is the user's call: `PATCH /api/integrations/:id {"default":true}` (add `"applyToExisting":true` for their existing watches), or `"default":true` on `POST /api/integrations/connect`.
 1. **See what is connected.** `GET /api/integrations` returns `[{id, service, label, status, lastError, ...}]`. With MCP: `await codemode.request({method:"GET", path:"/integrations"})` (on `/mcp/directory`: the `read` tool with path `/integrations`). If the destination is there and `status` is `active`, go to step 5. A `broken` connection needs a new one: connecting the same destination again (the same channel, chat or URL) replaces it and moves its rules, so skip step 5 for those watches. A different destination is a new connection, and needs step 5.
 2. **Missing? Make a link.** `POST /api/integrations/connect {"service":"slack"}` returns `{connectUrl, expiresAt}`. `service` is `slack`, `discord`, `telegram`, `home_assistant` or `webhook`. A 503 `integration_unavailable` means that service cannot be connected right now: say so and stop.
 3. **Show the link.** With MCP, call `show_link` with the exact `connectUrl`: the person gets a card with a QR code and an Open button, or the link and a text QR in a terminal. Without MCP, give them the link. It is single use, valid 15 minutes, and opens only for the person signed in to this account. You cannot open or finish it yourself.

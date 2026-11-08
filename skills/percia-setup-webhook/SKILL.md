@@ -1,6 +1,6 @@
 ---
 name: percia-setup-webhook
-description: Set up a webhook receiver for Percia alerts. Use when writing or reviewing code that receives Percia deliveries: signature verification over the raw body, replay window, deduplication, the signing secret.
+description: "Set up a webhook receiver for Percia alerts. Use when writing or reviewing code that receives Percia deliveries: signature verification over the raw body, replay window, deduplication, the signing secret."
 ---
 
 # Set up a webhook receiver

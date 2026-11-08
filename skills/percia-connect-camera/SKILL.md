@@ -1,6 +1,6 @@
 ---
 name: percia-connect-camera
-description: Connect a camera to Percia. Use when the user wants to watch from a phone or laptop camera, or needs a sourceUrl for a watch: creates the camera, hands back the pairing link, waits until it is online.
+description: "Connect a camera to Percia. Use when the user wants to watch from a phone or laptop camera, or needs a sourceUrl for a watch: creates the camera, hands back the pairing link, waits until it is online."
 ---
 
 # Connect a camera

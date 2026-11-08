@@ -1,6 +1,6 @@
 ---
 name: percia-debug-delivery
-description: Debug a Percia alert that did not arrive or failed verification. Use when a webhook receiver gets nothing, answers errors, rejects the signature, or an event shows deliveryStatus failed or pending.
+description: "Debug a Percia alert that did not arrive or failed verification. Use when a webhook receiver gets nothing, answers errors, rejects the signature, or an event shows deliveryStatus failed or pending."
 ---
 
 # Debug a delivery
