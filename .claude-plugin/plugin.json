@@ -19,5 +19,6 @@
     "slack",
     "vision"
   ],
-  "privacyPolicyUrl": "https://privacy.percia.ai/privacy/"
+  "privacyPolicyUrl": "https://privacy.percia.ai/privacy/",
+  "supportUrl": "mailto:support@velvee.ai"
 }
